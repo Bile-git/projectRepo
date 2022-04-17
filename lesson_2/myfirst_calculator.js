@@ -11,18 +11,18 @@ while(true){
 prompt('what is your first number?'); 
 
 let number1 = readline.question();
-
-while(inValidNumber(Number(number1))){ 
+number1 = number1.replaceAll(',','')
+while(inValidNumber(Number(number1.includes(',')))){ 
 	prompt("Hmmm... that does't look like a valid number!");
 number1 = readline.question();}
 
 // Ask the user for the second number.
 prompt('what is your second number?');
 let number2 = readline.question();
-
-while(inValidNumber(Number(number2))){
+number2 = number2.replaceAll(',','')
+while(inValidNumber(Number(number2.includes(',')))){
 	prompt("Hmm... that doesn't look like a valid number ");
-number2 = readline.question();}
+number2 = readline.question(',');}
 // Ask the user for an operation to perform.
 
 prompt('what operation would you like to perfom?\n1)Add 2)Multiply 3)Subtraction 4)Divide');
@@ -46,10 +46,10 @@ prompt(`The result is: ${output}`);
 
 prompt('do you want to perform another calculation ? (y/n)');
 let answer = readline.question();
-if(answer ==='y'){continue;
-answer = readline.question().toLowerCase();}
+if(answer[0].toLowerCase() ==='y'){continue;}
 
-else if(answer !== 'y')break;
+else if(answer[0].toLowerCase() !== 'y')break;
+answer = readline.question();
 
 }
 
