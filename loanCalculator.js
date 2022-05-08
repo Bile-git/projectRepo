@@ -1,39 +1,43 @@
 const readline = require('readline-sync');
 
-function prompt(message) {
-  console.log(`=>${message}`);
-}
+function prompt(message) { console.log(`=>${message}`); }
 
-function inValidNumber(number) {
-  return Number(number) < 0
-          || Number.isNaN(Number(number));
+function invalidNumber(number) {
+  return 'number'.trimStart() === ''
+  || Number(number) < 0
+  || Number.isNaN(Number(number));
 }
-
 prompt('Welcome to your loan calculator!');
 
 while (true) {
-  console.log('<><><><><><><><><><><><><><><<><><><><><><<><><>');
   prompt('what is your loan amount?');
   let amount = readline.question();
-  amount = amount.replaceAll('$', '').replaceAll(',', '');
 
-  while (inValidNumber(Number(amount.includes('$' && ',')))) {
-    amount = readline.question('$');
+  amount = Number(amount.replaceAll(',', '' && '$', ''));
+
+  while (invalidNumber(Number(amount))) {
     prompt('must enter a positive number');
+    amount = readline.question();
   }
+
   prompt('what is your interest rate?');
   let interestRate = readline.question();
-  interestRate = interestRate.replaceAll('%', '');
-  while (inValidNumber(Number(interestRate.includes('%')))) {
+  interestRate = Number(interestRate.replaceAll('%', ''));
+
+  while (invalidNumber(Number(interestRate))) {
     prompt(' write interest as 5% as 5, 2.5 as 2.5% ');
-    interestRate = readline.question('%');
+    interestRate = readline.question();
   }
+
   prompt('what is your loan duration (in years) ');
   let years = readline.question();
-  while (inValidNumber(Number(years))) {
+
+  while (invalidNumber(Number(years))) {
     prompt('the duration should be in year');
+
     years = readline.question();
   }
+
   const annualPaymentRate = Number(interestRate) / 100;
   const monthlyInterestRate = annualPaymentRate / 12;
   const months = Number(years) * 12;
@@ -45,12 +49,9 @@ while (true) {
 
   prompt('do you want to continue? please enter (y/n)');
 
-  let answer = readline.question();
+  const answer = readline.question();
 
-  if (answer[0].toLowerCase() === 'y') { 
-		continue; 
-	} 
-	else if (answer[0].toLowerCase() !== 'y') break;
+  if (answer.toLowerCase() === 'y') { prompt('Welcome again!'); } else if (answer === 'yes') { prompt('Go a head'); } else { prompt('Goodbye!'); break; }
 
-  answer = readline.question();
+  console.clear();
 }
