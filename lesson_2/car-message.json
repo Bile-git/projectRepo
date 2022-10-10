@@ -1,0 +1,30 @@
+
+
+{"en":{"welcome":"Welcome to loan calculator",
+"loanAmount":"What's your loan amount?",
+"validNumber": "Must enter positive number",
+"interestRate": "What's your interest rate ?",
+
+"rateSample":"Example: 5 is 5% or 3.5 is 3.5%",
+"period": "What's your loan duration ?",
+"durationInYears": "Your duration should be in years",
+
+"chooseY/N":" do you want to perform another operation? please enter (y/n)?",
+"welcomeBack":"Welcome again!"
+},
+
+"somali":{"welcome":"ku so dhawow deen xisaabiyaha",
+
+    "loanAmount":"deentada meqa weye ?",
+    "validNumber": "ku qor lamba sax ah",
+    "interestRate": "ribadda meqawey bishi ?",
+    "rateSample": "sambalka lo qoro ribadda wa 5 ah micnehedda 5% ama 3.5 oo ah 3.5% ",
+    "period":"meqaweye mudadha deenta ad kubixineso ?",
+    "duratiopnInYears":"mudadha wa in ad kadigta sanad",
+    
+    "chooseY/N":"maxisaab kale ma rabta? fadlan dooro (haa/maya)",
+    
+     "welcomeBack":"markale kusodowaaw!"
+
+}
+}
