@@ -104,10 +104,11 @@ displayBoard(board);
 
 while(true){
 playerChooseSquare(board);
-computerChoosesSquare(board);
-
-displayBoard(board)
 if(someoneWon(board)|| boardFull(board))break;
+
+computerChoosesSquare(board);
+if(someoneWon(board)|| boardFull(board))break;
+
 }
 if(someoneWon(board)){
     prompt(`${detectWinner(board)} won!`);
