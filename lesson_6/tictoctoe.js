@@ -6,7 +6,7 @@ function prompt(msg){console.log(`=>${msg}`);
 }
 function displayBoard(board){
     console.clear();
-
+console.log(`You aren ${HUMAN_MARKER}.computer is ${COMPUTER_MAKER}`)
 console.log(' ');
 console.log('     |     |');
 console.log(` ${board['1']}   |${board['2']}    |${board['3']}`)
@@ -99,6 +99,7 @@ board[sq3] === HUMAN_MARKER
     }
      return null;
 }
+while(true){
 let board = initializedBoard()
 displayBoard(board);
 
@@ -120,3 +121,8 @@ if(someoneWon(board)){
 else{
     prompt("It's a tie");
 }
+prompt('Play again ? (y or n)')
+let answer = readline.question().toLowerCase()[0]
+if (answer !== 'y')break;
+}
+prompt('Thank you for playing Tic Tac Toe!')
