@@ -103,13 +103,16 @@ let board = initializedBoard()
 displayBoard(board);
 
 while(true){
+    displayBoard(board);
 playerChooseSquare(board);
 if(someoneWon(board)|| boardFull(board))break;
 
 computerChoosesSquare(board);
 if(someoneWon(board)|| boardFull(board))break;
 
-}
+}   
+
+displayBoard(board)
 if(someoneWon(board)){
     prompt(`${detectWinner(board)} won!`);
 
